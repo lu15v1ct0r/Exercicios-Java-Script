@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    <div>
+        <label for="idade">Idade:</label>
+        <input name="idade" id="idade" type="text"> <br>
+        <p id="msg" style="color: rgb(66, 210, 30)"></p>
+        <button id="enviar" onclick="validar();">Enviar</button>
+    </div> 
+    <script>
+        function validar(){
+            const id = document.getElementById("idade").value;
+            let texto;
+            if(isNaN(id) || id<1 || id>130)
+                texto = "Idade inválida!";
+            else
+                texto = "Idade OK!";
+            
+            document.getElementById("msg").innerHTML = texto;
+        }
+    </script>
+</body>
+</html>

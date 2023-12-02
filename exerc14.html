@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    <label for="caixa">colocar botão</label>
+    <input onclick="colocar();" id="caixa" type="checkbox"><br>
+    <button style="font-size: 20px;display: none;">Aperte</button>
+    <script>
+        function colocar(){
+            const marcado = document.getElementById("caixa").checked;
+            console.log(marcado);
+            const botao = document.getElementsByTagName("button")[0];
+            botao.addEventListener("click",function(){
+                const divi = document.createElement("div");
+                const imagem = document.createElement("img"); 
+                imagem.src = "imgs/bob esponja.jpg";
+                divi.appendChild(imagem);
+                document.body.appendChild(divi);
+                const im = document.getElementsByTagName("img")[0];
+            im.addEventListener("click", function() {
+                divi.removeChild(im); 
+            });
+            });
+            
+            if(marcado)
+                botao.style.display = "inline";
+            else
+                botao.style.display = "none";
+        }
+    </script>
+</body>
+</html>
