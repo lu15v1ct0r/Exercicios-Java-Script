@@ -38,10 +38,32 @@
         <div>
             <button onclick="calcular();">Média</button>
             <button onclick="limpar();">Limpar</button>
+            <button onclick="aterarLayout();" class="btlayout">Modo Escuro</button>
         </div>
         <h3 class="result">Resultado:</h3>
     </div>
     <script>
+        let modo = 0;
+        function aterarLayout(){
+            const minhaDiv = 
+            document.getElementsByTagName("div")[0].style;
+            const meuBotao = document.getElementsByTagName("button")[2].style;
+            if(modo==0){
+                minhaDiv.backgroundColor = "black";
+                minhaDiv.color = "white";
+                meuBotao.backgroundColor = "white";
+                meuBotao.color = "black";
+                document.getElementsByTagName("button")[2].innerHTML = "Modo Claro";
+                modo=1;
+            }else{
+                minhaDiv.padding = "5%";
+                minhaDiv.border = "2px solid rgb(150, 150, 150)";
+                minhaDiv.backgroundColor= "rgb(230, 230, 230)";
+                minhaDiv.color= "black"
+                document.getElementsByTagName("button")[2].innerHTML = "Modo Escuro";
+                modo=0;
+            }
+        }
         function calcular(){
             const nota1 = parseFloat(document.getElementById("nota1").value);
             const nota2 = parseFloat(document.getElementById("nota2").value);
